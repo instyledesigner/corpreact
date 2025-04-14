@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import { HashRouter, Routes, Route, Navigate } from "react-router-dom";
+
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './styles/custom.scss';
@@ -16,15 +17,15 @@ function App() {
 
   return (
     <>
-      <BrowserRouter>
-      <Header />
-      <Routes>
-        <Route path='/' element={<Home />} />
-        <Route path='/aboutus' element={<AboutUs />} />
-        <Route path='*' element={<Navigate replace={true} to='/' />} /> {/* this is for homepage redirection */}
-      </Routes>
-      <Footer />
-      </BrowserRouter>
+      <HashRouter>
+        <Header />
+        <Routes>
+          <Route path='/' element={<Home />} />
+          <Route path='/aboutus' element={<AboutUs />} />
+          <Route path='*' element={<Navigate replace={true} to='/' />} />
+        </Routes>
+        <Footer />
+      </HashRouter>
     </>
   );
 }
